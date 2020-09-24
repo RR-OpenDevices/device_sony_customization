@@ -22,46 +22,46 @@ CUST_PATH := device/sony/customization
 
 # DEVICE_PACKAGE_OVERLAYS += $(CUST_PATH)/overlay
 
-ifneq ($(filter aosp_f53% aosp_g1109 aosp_g8441, $(TARGET_PRODUCT)),)
+ifneq ($(filter rr_kugo rr_blanc rr_lilac, $(TARGET_PRODUCT)),)
 TARGET_SCREEN_HEIGHT := 1280
 TARGET_SCREEN_WIDTH := 720
 endif
 
-ifneq ($(filter aosp_f51% aosp_f8% aosp_g82% aosp_g83% aosp_h%13 aosp_i%13 aosp_xqau%, $(TARGET_PRODUCT)),)
+ifneq ($(filter rr_suzu rr_dora rr_kagura rr_keyaki rr_poplar rr_pioneer rr_voyager rr_discovery rr_kirin, $(TARGET_PRODUCT)),)
 TARGET_SCREEN_HEIGHT := 1920
 TARGET_SCREEN_WIDTH := 1080
 endif
 
-ifneq ($(filter aosp_h82%6 aosp_h83%4, $(TARGET_PRODUCT)),)
+ifneq ($(filter rr_akari rr_apollo, $(TARGET_PRODUCT)),)
 TARGET_SCREEN_HEIGHT := 2160
 TARGET_SCREEN_WIDTH := 1080
 endif
 
-ifneq ($(filter aosp_h84%6 aosp_h94%6, $(TARGET_PRODUCT)),)
+ifneq ($(filter rr_akatsuki, $(TARGET_PRODUCT)),)
 TARGET_SCREEN_HEIGHT := 2880
 TARGET_SCREEN_WIDTH := 1440
 endif
 
-ifneq ($(filter aosp_j%210, $(TARGET_PRODUCT)),)
+ifneq ($(filter rr_mermaid rr_bahamut, $(TARGET_PRODUCT)),)
 TARGET_SCREEN_HEIGHT := 2520
 TARGET_SCREEN_WIDTH := 1080
 endif
 
-ifneq ($(filter aosp_g814%, $(TARGET_PRODUCT)),)
+ifneq ($(filter rr_maple, $(TARGET_PRODUCT)),)
 TARGET_SCREEN_HEIGHT := 3840
 TARGET_SCREEN_WIDTH := 2160
 endif
 
-ifneq ($(filter aosp_j%110, $(TARGET_PRODUCT)),)
+ifneq ($(filter rr_griffin, $(TARGET_PRODUCT)),)
 TARGET_SCREEN_HEIGHT := 3840
 TARGET_SCREEN_WIDTH := 1644
 endif
 
-ifneq ($(filter aosp_g814%, $(TARGET_PRODUCT)),)
+ifneq ($(filter rr_maple, $(TARGET_PRODUCT)),)
 # Faking to 1080 to get the right bootanimation res on:
 # Maple(3840x2160)
 TARGET_BOOT_ANIMATION_RES := 1080
-else ifneq ($(filter aosp_j%110, $(TARGET_PRODUCT)),)
+else ifneq ($(filter rr_griffin, $(TARGET_PRODUCT)),)
 # Faking to 1440 to get the best bootanimation res on:
 # Griffin (3840x1644)
 TARGET_BOOT_ANIMATION_RES := 1440
@@ -187,4 +187,4 @@ $(call inherit-product-if-exists, vendor/widevine/widevine.mk)
 DEXPREOPT_GENERATE_APEX_IMAGE := true
 
 -include $(CUST_PATH)/pe_cust.mk
--include vendor/aosp/config/common_full_phone.mk
+-include vendor/rr/config/common_full_phone.mk
